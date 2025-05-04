@@ -8,6 +8,12 @@ export class RxjsController {
 
   @Get("repositories/")
   async repositories(@Query() { text, hub }: IParamText) {
-    return await this.rxjsService.searchRepositories(text, hub);
+    return await this.rxjsService.searchRepositories(text, hub, "repositories");
   }
+  
+  @Get("users/")
+  async users(@Query() { text, hub }: IParamText) {
+    return await this.rxjsService.searchRepositories(text, hub, "users");
+  }
+
 }
